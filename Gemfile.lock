@@ -23,6 +23,7 @@ GEM
     rspec-support (3.12.1)
 
 PLATFORMS
+  x86_64-linux
   arm64-darwin-22
 
 DEPENDENCIES
