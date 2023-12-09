@@ -1,5 +1,12 @@
 # frozen_string_literal: true
 
 module StagedBox
-  VERSION = "0.0.1"
+  module VERSION
+    MAJOR = 0
+    MINOR = 0
+    BUILD  = 0
+    PRE   = "alpha"
+
+    STRING = [MAJOR, MINOR, BUILD, PRE].compact.join(".")
+  end
 end
