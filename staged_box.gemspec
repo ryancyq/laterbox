@@ -4,7 +4,7 @@ require_relative "lib/staged_box/version"
 
 Gem::Specification.new do |spec|
   spec.name = "staged_box"
-  spec.version = StagedBox::VERSION
+  spec.version = StagedBox::VERSION::STRING
   spec.authors = ["ryancyq"]
   spec.email = ["ryancyq@gmail.com"]
 
