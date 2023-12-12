@@ -1,4 +1,14 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-puts "Test Command"
+require_relative "../lib/staged_box/command"
+
+begin
+  StagedBox::Command.run
+rescue StandardError => ex
+  raise e if $DEBUG
+
+  warn ex.message
+  warn ex.backtrace.join("\n")
+  exit 1
+end
