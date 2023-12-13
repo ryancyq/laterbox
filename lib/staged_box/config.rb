@@ -10,22 +10,22 @@ module StagedBox
     DEFAULT_CONCURRENCY = 3
     DEFAULT_BUFFER_SIZE = 1
 
-    attr_accessor :default_log_level, :boxes, :concurreny, :buffer_size
+    attr_accessor :default_log_level, :boxes, :concurrency, :buffer_size
 
     def initialize(options = {})
       set_defaults
       @default_log_level = options[:default_log_level] if options.key?(:default_log_level)
       @boxes             = options[:boxes] if options.key?(:boxes)
-      @concurreny        = options[:concurreny] if options.key?(:concurreny)
+      @concurrency        = options[:concurrency] if options.key?(:concurrency)
       @buffer_size       = options[:buffer_size] if options.key?(:buffer_size)
     end
 
     def to_hash
       {
         default_log_level: @default_log_level,
-        boxes: @boxes,
-        concurreny: @concurrency,
-        buffer_size: @buffer_size
+        boxes:             @boxes,
+        concurrency:       @concurrency,
+        buffer_size:       @buffer_size
       }
     end
 
@@ -49,7 +49,7 @@ module StagedBox
     def set_defaults
       @default_log_level = DEFAULT_LOG_LEVEL
       @boxes             = DEFAULT_BOXES
-      @concurreny        = DEFAULT_CONCURRENCY
+      @concurrency        = DEFAULT_CONCURRENCY
       @buffer_size       = DEFAULT_BUFFER_SIZE
     end
 
