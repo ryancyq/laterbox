@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module StagedBox
+module Laterbox
   module VERSION
     MAJOR = 0
     MINOR = 0
