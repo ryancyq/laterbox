@@ -1,6 +1,6 @@
 # Sample configuration file.
 # Options here can still be overridden by cmd line args.
-# Place this file at config/staged_event.yml and it will be
+# Place this file at config/laterbox.yml and it will be
 # picked it up automatically.
 ---
 concurrency: 10

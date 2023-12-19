@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative "../lib/staged_box"
+require_relative "../lib/laterbox"
 
 begin
-  StagedBox::Command.run
+  Laterbox::Command.run
 rescue StandardError => ex
   raise e if $DEBUG
 

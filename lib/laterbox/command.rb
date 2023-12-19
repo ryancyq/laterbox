@@ -4,7 +4,7 @@ $stdout.sync = true
 
 require "optparse"
 
-module StagedBox
+module Laterbox
   class Command
     INTERRUPT_SIGNALS = %w[INT TERM]
 
@@ -25,19 +25,19 @@ module StagedBox
         end
       end
 
-      app = ::StagedBox::Bootloader.new(config)
+      app = ::Laterbox::Bootloader.new(config)
       app.start
     end
 
 private
 
     def setup_config
-      config = ::StagedBox::Config.new.to_hash
+      config = ::Laterbox::Config.new.to_hash
 
       if @config_file
         config.merge!(file_config(@config_file)) 
       else
-        default_config_file = File.join("config", "staged_event.yml")
+        default_config_file = File.join("config", "laterbox.yml")
         config.merge!(file_config(default_config_file)) if File.exist?(default_config_file)
       end
       config.merge!(command_config)
@@ -47,7 +47,7 @@ private
     def file_config(path)
       return {} unless File.exist?(path)
 
-      ::StagedBox::Config.from_file(path).to_hash 
+      ::Laterbox::Config.from_file(path).to_hash 
     end
 
     def command_config
@@ -59,13 +59,13 @@ private
 
     def options_parser
       @options_parser ||= OptionParser.new do |opt|
-        opt.banner = "Usage: staged_box [options] start|stop|restart|run"
+        opt.banner = "Usage: laterbox [options] start|stop|restart|run"
         opt.on('-h', '--help', 'show help') do
           $stdout.puts opt
           exit(0)
         end
         opt.on "-v", "--version", "print version" do |_arg|
-          puts "StagedBox #{StagedBox::VERSION::STRING}"
+          puts "Laterbox #{Laterbox::VERSION::STRING}"
           exit(0)
         end
         opt.on "-C", "--config PATH", "path to YAML config file" do |config_file|

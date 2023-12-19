@@ -2,7 +2,7 @@
 
 require "yaml"
 
-module StagedBox
+module Laterbox
   class Config
 
     DEFAULT_LOG_LEVEL = 'info'.freeze

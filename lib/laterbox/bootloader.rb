@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module StagedBox
+module Laterbox
   class Bootloader
     def initialize(config)
     end

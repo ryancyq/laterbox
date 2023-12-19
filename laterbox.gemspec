@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-require_relative "lib/staged_box/version"
+require_relative "lib/laterbox/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "staged_box"
-  spec.version = StagedBox::VERSION::STRING
+  spec.name = "laterbox"
+  spec.version = Laterbox::VERSION::STRING
   spec.authors = ["Ryan Chang"]
   spec.email = ["ryancyq@gmail.com"]
 
   spec.summary = "A transactional outbox implementation for event publishing in Ruby."
   spec.description = "A transactional outbox implementation for event publishing in Ruby."
-  spec.homepage = "https://github.com/ryancyq/staged_box"
+  spec.homepage = "https://github.com/ryancyq/laterbox"
   spec.required_ruby_version = ">= 3.0.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/ryancyq/staged_box"
-  spec.metadata["changelog_uri"] = "https://github.com/ryancyq/staged_box/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/ryancyq/laterbox"
+  spec.metadata["changelog_uri"] = "https://github.com/ryancyq/laterbox/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
