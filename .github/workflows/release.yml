@@ -1,12 +1,9 @@
 name: Release
 
 on:
-  push:
-    branches: [ "main" ]
-    tags: [ "v*" ]
   workflow_run:
     workflows: ["CI"]
-    branches: [main]
+    branches: [ "releases/v[0-9]+.[0-9]+.[0-9]+" ]
     types: 
       - completed
 
