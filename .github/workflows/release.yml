@@ -1,6 +1,9 @@
 name: Release
 
 on:
+  push:
+    branches: [ "main" ]
+    tags: [ "v*" ]
   workflow_run:
     workflows: ["CI"]
     branches: [main]
@@ -8,13 +11,15 @@ on:
       - completed
 
 jobs:
-  build:
+  release:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
 
     steps:
+    - run: echo 'CI workflow completed successfully'
     - uses: actions/checkout@v3
     - uses: ruby/setup-ruby@v1
       with:
