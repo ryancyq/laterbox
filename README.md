@@ -1,4 +1,11 @@
 # Laterbox
+[![Gem Version](https://badge.fury.io/rb/laterbox.svg)](https://badge.fury.io/rb/laterbox)
+[![CI](https://github.com/ryancyq/laterbox/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ryancyq/laterbox/actions/workflows/ci.yml)
+
+A transactional outbox implementation for in-order e event publishing in Ruby
+
+## Requirements
+- Ruby: MRI 3.0+
 
 ## Installation
 
@@ -10,9 +17,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
     $ gem install laterbox
 
-## Usage
-
-TODO: Write usage instructions here
+## Getting Started
 
 ## Development
 
